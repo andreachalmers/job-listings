@@ -1,7 +1,12 @@
 import './App.scss'
+import Header from './components/layout/Header/Header'
 
 function App() {
-  return <h1>Hello React World</h1>
+  return (
+    <>
+      <Header />
+    </>
+  )
 }
 
 export default App

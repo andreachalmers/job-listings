@@ -1,0 +1,5 @@
+@import './styles/_variables.scss';
+
+h1 {
+    @include text-preset-1;
+}

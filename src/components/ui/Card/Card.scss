@@ -1,0 +1,109 @@
+.card {
+    background-color: $color-white;
+    border-radius: 5px;
+    box-shadow: 0 15px 20px -5px rgba($color-green-400, 0.15);
+    padding: $spacing-300;
+    padding-top: $spacing-500;
+    position: relative;
+    margin: $spacing-500 $spacing-300;
+
+    &--featured {
+        border-left: 5px solid $color-green-400;
+    }
+
+    @include desktop {
+        display: flex;
+        align-items: center;
+        padding: $spacing-300 $spacing-500;
+    }
+
+    // Logo
+    &__logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: contain;
+        position: absolute;
+        top: -24px;
+        left: $spacing-300;
+
+        @include desktop {
+            width: 88px;
+            height: 88px;
+            position: static;
+            margin-right: $spacing-300;
+        }
+    }
+
+    // Info section
+    &__info {
+        @include desktop {
+            flex: 1;
+        }
+    }
+
+    &__company-row {
+        display: flex;
+        align-items: center;
+        gap: $spacing-100;
+        margin-bottom: $spacing-100;
+    }
+
+    &__company {
+        @include text-preset-3-bold;
+        color: $color-green-400;
+        margin-right: $spacing-100;
+    }
+
+    &__position {
+        @include text-preset-2-bold;
+        color: $color-green-900;
+        margin: 0 0 $spacing-100 0;
+        cursor: pointer;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $color-green-400;
+        }
+    }
+
+    // Meta list
+    &__meta {
+        @include text-preset-3-medium;
+        color: $color-gray-400;
+        display: flex;
+        align-items: center;
+        gap: $spacing-100;
+
+        li + li::before {
+            content: '·';
+            margin-right: $spacing-100;
+            color: $color-gray-300;
+        }
+    }
+
+    // Divider (mobile only)
+    &__divider {
+        border: none;
+        border-top: 1px solid $color-gray-300;
+        margin: $spacing-200 0;
+
+        @include desktop {
+            display: none;
+        }
+    }
+
+    // Tags
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $spacing-200;
+
+        @include desktop {
+            justify-content: flex-end;
+            margin-left: auto;
+        }
+    }
+
+}
+

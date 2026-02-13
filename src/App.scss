@@ -1,5 +1,17 @@
 @import './styles/_variables.scss';
 
-h1 {
-    @include text-preset-1;
+body {
+    background-color: $color-green-50;
+}
+
+main {
+    @include tablet {
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    @include desktop {
+        display: block;
+        max-width: 1110px;
+        margin: 0 auto;
+    }
 }

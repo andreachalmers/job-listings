@@ -1,0 +1,17 @@
+.badge {
+    @include text-preset-6;
+    padding: 6px $spacing-100 4px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    color: $color-white;
+    line-height: 1;
+
+    &--new {
+        background-color: $color-green-400;
+    }
+
+    &--featured {
+        background-color: $color-green-900;
+    }
+}
+

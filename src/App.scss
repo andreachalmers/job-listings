@@ -4,14 +4,27 @@ body {
     background-color: $color-green-50;
 }
 
-main {
+.job-listings {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
     @include tablet {
-        display:grid;
+        display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: $spacing-300;
+        align-items: stretch;
     }
+    
     @include desktop {
         display: block;
         max-width: 1110px;
-        margin: 0 auto;
+        margin: $spacing-500 auto 0;
+    }
+    
+    &__item {
+        @include tablet {
+            display: flex;
+        }
     }
 }

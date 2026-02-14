@@ -9,9 +9,11 @@ function App() {
     <>
       <Header />
       <main>
-        {
-          jobListingsData.map((job) => <Card {...job} newListing={job.new} />)
-        }
+        <ul className="job-listings">
+          {
+            jobListingsData.map((job) => <li className="job-listings__item" key={job.id}><Card {...job} newListing={job.new} /></li>)
+          }
+        </ul>
       </main>
     </>
   )

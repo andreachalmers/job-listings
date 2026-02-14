@@ -1,6 +1,7 @@
 import './Card.scss'
 import Badge from '../Badge/Badge'
 import Tag from '../Tag/Tag'
+import {useJobStore} from "../../../store/useJobStore.ts";
 
 interface CardProps {
     id: number;
@@ -20,6 +21,7 @@ interface CardProps {
 
 export default function Card({ company, logo, newListing, featured, position, role, level, postedAt, contract, location, languages, tools }: CardProps) {
     const tags = [role, level, ...languages, ...tools]
+    const filters = useJobStore((state) => state.filters)
 
     return (
         <article className={`card${featured ? ' card--featured' : ''}`}>
@@ -49,7 +51,7 @@ export default function Card({ company, logo, newListing, featured, position, ro
 
             <ul className="card__tags">
                 {tags.map((tag) => (
-                    <Tag key={tag} label={tag} />
+                    <Tag key={tag} label={tag} selected={!!filters.includes(tag)} />
                 ))}
             </ul>
         </article>

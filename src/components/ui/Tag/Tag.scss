@@ -6,6 +6,11 @@
     border-radius: 4px;
     transition: background-color 0.2s ease, color 0.2s ease;
 
+    &--selected {
+        background-color: $color-green-400;
+        color: $color-white;
+    }
+
     &:hover {
         background-color: $color-green-400;
         color: $color-white;

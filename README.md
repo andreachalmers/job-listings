@@ -37,18 +37,22 @@ This is a Frontend Mentor challenge solution that displays job listings with fil
 
 ### Desktop Design
 ![Desktop View](./design/desktop-design.jpg)
+
 *Full desktop layout showing all job listings*
 
 ### Mobile Design
 ![Mobile View](./design/mobile-design.jpg)
+
 *Mobile-optimized layout with stacked cards*
 
 ### Mobile with Filters
 ![Mobile with Filters](./design/mobile-with-filters.jpg)
+
 *Mobile view with active filter bar and filtered results*
 
 ### Active States
 ![Active States](./design/active-states.jpg)
+
 *Interactive states showing hover and active filter states*
 
 ## Tech Stack

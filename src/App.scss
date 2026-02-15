@@ -4,6 +4,16 @@ body {
     background-color: $color-green-50;
 }
 
+.main-content {
+    max-width: $max-width;
+    margin: 0 auto;
+
+    &--with-filter {
+        position: relative;
+        top: -60px;
+    }
+}
+
 .job-listings {
     list-style: none;
     padding: 0;
@@ -18,7 +28,6 @@ body {
     
     @include desktop {
         display: block;
-        max-width: 1110px;
         margin: $spacing-500 auto 0;
     }
     

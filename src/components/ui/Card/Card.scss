@@ -1,7 +1,7 @@
 .card {
     background-color: $color-white;
     border-radius: 5px;
-    box-shadow: 0 15px 20px -5px rgba($color-green-400, 0.15);
+    box-shadow: $box-shadow;
     padding: $spacing-300;
     padding-top: $spacing-500;
     position: relative;
@@ -21,7 +21,6 @@
         margin-top: 0;
     }
 
-    // Logo
     &__logo {
         width: 48px;
         height: 48px;
@@ -86,7 +85,6 @@
         }
     }
 
-    // Divider (mobile only)
     &__divider {
         border: none;
         border-top: 1px solid $color-gray-300;
@@ -97,7 +95,6 @@
         }
     }
 
-    // Tags
     &__tags {
         display: flex;
         flex-wrap: wrap;

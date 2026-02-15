@@ -1,6 +1,56 @@
 .filter-bar {
   background: $color-white;
-  padding: 24px;
-  margin:24px;
+  margin:$spacing-300;
   border-radius: 5px;
+  box-shadow: $box-shadow;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-top: $spacing-300;
+  padding-left: $spacing-300;
+
+  .filter {
+    display: inline-flex;
+    margin: 0 $spacing-200 $spacing-300 0;
+
+    &__label {
+      color: $color-green-400;
+      background-color: $color-green-50;
+      padding: $spacing-100 $spacing-200;
+      border-radius: 4px 0 0 4px;
+      @include text-preset-3-bold;
+    }
+
+    &__remove-btn {
+      color: $color-white;
+      background-color: $color-green-400;
+      border-radius: 0 4px 4px 0;
+      padding: $spacing-100;
+
+      &:hover {
+        background-color: $color-green-900;
+        color: $color-white;
+      }
+    }
+  }
+
+  &__filters {
+    width: 80%;
+    flex-wrap: wrap;
+  }
+  &__clear-btn {
+    width: 20%;
+    margin-bottom: $spacing-300;
+    text-align: right;
+    background: none;
+    border: none;
+    color: $color-gray-400;
+    margin-left: auto;
+    margin-right: $spacing-300;
+    @include text-preset-3-bold;
+
+    &:hover {
+        color: $color-green-400;
+    }
+  }
 }

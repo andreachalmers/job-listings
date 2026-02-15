@@ -31,8 +31,8 @@ function App() {
     return (
     <>
       <Header />
-      <main>
-        <FilterBar />
+      <main className={`main-content ${filters.length ? 'main-content--with-filter' : ''}`}>
+          { !!filters.length && <FilterBar />}
         <ul className="job-listings">
             { renderJobListings() }
         </ul>

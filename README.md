@@ -2,9 +2,6 @@
 
 A modern, responsive job listings application built with React, TypeScript, and Vite. Filter job listings by role, level, languages, and tools with a clean, intuitive interface.
 
-![Desktop View](./design/desktop-design.jpg)
-*Desktop view of the job listings application*
-
 ## Table of Contents
 
 - [Overview](#overview)

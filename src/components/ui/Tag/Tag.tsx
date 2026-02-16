@@ -1,6 +1,5 @@
 import './Tag.scss'
 import {useJobStore} from "../../../store/useJobStore.ts";
-// import {useState} from "react";
 
 interface TagProps {
     label: string
@@ -8,16 +7,13 @@ interface TagProps {
 }
 
 export default function Tag({ label, selected }: TagProps) {
-    // const [selected, setSelected] = useState(false)
     const addFilter = useJobStore((state) => state.addFilter)
     const removeFilter = useJobStore((state) => state.removeFilter)
     const handleTagSelect = (label: string) => {
         if(selected) {
             removeFilter(label)
-            //setSelected(false)
         } else {
             addFilter(label)
-            //setSelected(true)
         }
     }
     return (
@@ -25,6 +21,7 @@ export default function Tag({ label, selected }: TagProps) {
             <button
                 className={`tag ${selected ? 'tag--selected' : ''}`}
                 onClick={() => handleTagSelect(label)}
+                data-cy="tag"
             >
                 {label}
             </button>

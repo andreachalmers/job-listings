@@ -16,7 +16,9 @@ A modern, responsive job listings application built with React, TypeScript, and 
 - [Key Features](#key-features)
 - [State Management](#state-management)
 - [Styling](#styling)
+- [Testing](#testing)
 - [Build & Deployment](#build--deployment)
+- [Development](#development)
 
 ## Overview
 
@@ -63,6 +65,7 @@ This is a Frontend Mentor challenge solution that displays job listings with fil
 - **Zustand** - State management
 - **SCSS** - Styling with variables and mixins
 - **League Spartan** - Custom font from Google Fonts
+- **Cypress** - End-to-end testing
 
 ## Getting Started
 
@@ -75,7 +78,7 @@ This is a Frontend Mentor challenge solution that displays job listings with fil
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone git@github.com:andreachalmers/job-listings.git
 cd job-listings
 ```
 
@@ -140,6 +143,10 @@ job-listings/
 │   ├── App.scss
 │   ├── main.tsx
 │   └── index.css
+├── cypress/             # Cypress test files
+│   └── e2e/
+│       └── job-listings.cy.ts # E2E test suite
+├── cypress.config.ts    # Cypress configuration
 ├── data.json            # Job listings data
 ├── package.json
 └── vite.config.ts
@@ -209,6 +216,43 @@ Filters are stored globally and components subscribe to changes automatically.
 npm run build
 ```
 
+## Testing
+
+This project uses Cypress for end-to-end testing. The test suite covers:
+
+- Header and job listings display
+- Job card information and structure
+- Filtering functionality (adding/removing filters)
+- Filter bar interactions
+- Featured jobs and badges
+- Responsive design (mobile and tablet viewports)
+
+### Running Tests
+
+**Open Cypress Test Runner (Interactive Mode):**
+```bash
+npm run cypress:open
+```
+This opens the Cypress Test Runner where you can select and run tests interactively.
+
+**Run Tests Headlessly:**
+```bash
+npm run cypress:run
+```
+or
+```bash
+npm run test:e2e
+```
+This runs all tests in headless mode (useful for CI/CD).
+
+**Before running tests:**
+Make sure your development server is running:
+```bash
+npm run dev
+```
+
+The tests are configured to run against `http://localhost:5173` by default.
+
 ## Development
 
 ### Available Scripts
@@ -217,6 +261,9 @@ npm run build
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
+- `npm run cypress:open` - Open Cypress Test Runner (interactive)
+- `npm run cypress:run` - Run Cypress tests headlessly
+- `npm run test:e2e` - Alias for running E2E tests
 
 ## License
 

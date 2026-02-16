@@ -10,7 +10,7 @@ export default function FilterBar() {
                 { filters.map((filter => (
                         <div className="filter" key={filter}>
                             <span className="filter__label">{filter}</span>
-                            <button className="filter__remove-btn" onClick={() => useJobStore.getState().removeFilter(filter)}>
+                            <button className="filter__remove-btn" onClick={() => useJobStore.getState().removeFilter(filter)} data-cy="remove-filter">
                                 <img src={IconRemove} alt={`Remove ${filter} filter`} />
                             </button>
                         </div>

@@ -24,7 +24,7 @@ export default function Card({ company, logo, newListing, featured, position, ro
     const filters = useJobStore((state) => state.filters)
 
     return (
-        <article className={`card${featured ? ' card--featured' : ''}`}>
+        <article className={`card${featured ? ' card--featured' : ''}`} data-cy="job-card">
             <img 
                 src={logo} 
                 alt={`${company} logo`} 

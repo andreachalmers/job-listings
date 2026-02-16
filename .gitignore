@@ -25,3 +25,8 @@ dist-ssr
 
 CLAUDE.md
 AGENTS.md
+
+# Cypress
+cypress/videos
+cypress/screenshots
+cypress/downloads

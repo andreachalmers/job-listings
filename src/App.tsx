@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import './App.scss'
 import Header from './components/layout/Header/Header'
 import Card from './components/ui/Card/Card'
@@ -14,10 +15,14 @@ const jobs: Job[] = jobListingsData.map(job => ({
 function App() {
     const filters = useJobStore((state) => state.filters)
 
-    const filteredJobs = jobs.filter(job => {
-        const jobTags = [job.role, job.level, ...job.languages, ...job.tools]
-        return filters.every(filter => jobTags.includes(filter))
-    })
+    const filteredJobs = useMemo(() => {
+        if (filters.length === 0) return jobs
+        
+        return jobs.filter(job => {
+            const jobTags = [job.role, job.level, ...job.languages, ...job.tools]
+            return filters.every(filter => jobTags.includes(filter))
+        })
+    }, [filters])
 
     return (
     <>

@@ -3,30 +3,21 @@ import Header from './components/layout/Header/Header'
 import Card from './components/ui/Card/Card'
 import FilterBar from './components/ui/FilterBar/FilterBar'
 import jobListingsData from '../data.json'
-import {useJobStore} from "./store/useJobStore.ts";
+import {useJobStore} from "./store/useJobStore.ts"
+import type {Job} from "./types/job.ts"
+
+const jobs: Job[] = jobListingsData.map(job => ({
+    ...job,
+    newListing: job.new,
+}))
 
 function App() {
     const filters = useJobStore((state) => state.filters)
-    const filteredJobListings = jobListingsData.filter(job => {
+
+    const filteredJobs = jobs.filter(job => {
         const jobTags = [job.role, job.level, ...job.languages, ...job.tools]
         return filters.every(filter => jobTags.includes(filter))
     })
-
-    const renderJobListings = () => {
-        if (!filters.length) {
-            return jobListingsData.map((job) => (
-                <li key={job.id} className="job-listings__item">
-                    <Card {...job} newListing={job.new} />
-                </li>
-            ))
-        } else {
-            return filteredJobListings.map((job) => (
-                <li key={job.id} className="job-listings__item">
-                    <Card {...job} newListing={job.new} />
-                </li>
-            ))
-        }
-    }
 
     return (
     <>
@@ -34,7 +25,11 @@ function App() {
       <main className={`main-content ${filters.length ? 'main-content--with-filter' : ''}`}>
           { !!filters.length && <FilterBar />}
         <ul className="job-listings">
-            { renderJobListings() }
+            {filteredJobs.map((job) => (
+                <li key={job.id} className="job-listings__item">
+                    <Card {...job} />
+                </li>
+            ))}
         </ul>
       </main>
     </>

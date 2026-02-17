@@ -1,25 +1,10 @@
 import './Card.scss'
 import Badge from '../Badge/Badge'
 import Tag from '../Tag/Tag'
-import {useJobStore} from "../../../store/useJobStore.ts";
+import {useJobStore} from "../../../store/useJobStore.ts"
+import type {Job} from "../../../types/job.ts"
 
-interface CardProps {
-    id: number;
-    company: string;
-    logo: string;
-    newListing: boolean;
-    featured: boolean;
-    position: string;
-    role: string;
-    level: string;
-    postedAt: string;
-    contract: string;
-    location: string;
-    languages: string[];
-    tools: string[];
-}
-
-export default function Card({ company, logo, newListing, featured, position, role, level, postedAt, contract, location, languages, tools }: CardProps) {
+export default function Card({ company, logo, newListing, featured, position, role, level, postedAt, contract, location, languages, tools }: Job) {
     const tags = [role, level, ...languages, ...tools]
     const filters = useJobStore((state) => state.filters)
 

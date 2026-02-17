@@ -9,9 +9,10 @@ interface JobStore {
 
 export const useJobStore = create<JobStore>((set) => ({
   filters: [],
-  addFilter: (filter) => set((state) => ({
-    filters: [...state.filters, filter]
-  })),
+  addFilter: (filter) => set((state) => {
+    if (state.filters.includes(filter)) return state
+    return { filters: [...state.filters, filter] }
+  }),
   removeFilter: (filter) => set((state) => ({
     filters: state.filters.filter(f => f !== filter)
   })),
